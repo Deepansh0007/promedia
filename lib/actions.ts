@@ -18,7 +18,6 @@ export const fetchToken = async () => {
     throw err;
   }
 };
-
 export const uploadImage = async (imagePath: string) => {
   try {
     const response = await fetch(`${serverUrl}/api/upload`, {
