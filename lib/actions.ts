@@ -66,8 +66,6 @@ export const createNewProject = async (form: ProjectForm, creatorId: string, tok
     return makeGraphQLRequest(createProjectMutation, variables);
   }
 };
-
-/
 export const createUser = (name: string, email: string, avatarUrl: string) => {
   client.setHeader("x-api-key", apiKey);
 
