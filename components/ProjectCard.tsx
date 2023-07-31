@@ -19,8 +19,8 @@ const ProjectCard = ({ id, image, title, name, avatarUrl, userId }: Props) => {
     const [randomViews, setRandomViews] = useState('');
 
     useEffect(() => {
-        setRandomLikes(Math.floor(Math.random() * 10000))
-        setRandomViews(String((Math.floor(Math.random() * 10000) / 1000).toFixed(1) + 'k'))
+        setRandomLikes(Math.floor(Math.random() * 100))
+        setRandomViews(String((Math.floor(Math.random() * 100)).toFixed(1) + 'k'))
     }, []);
 
     return (

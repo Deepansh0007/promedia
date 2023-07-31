@@ -28,25 +28,10 @@ export const NavLinks = [
       links: [
         'Go Pro!',
         'Explore development work',
-        'Development blog',
         'Code podcast',
         'Open-source projects',
         'Refer a Friend',
         'Code of conduct',
-      ],
-    },
-    {
-      title: 'Hire developers',
-      links: [
-        'Post a job opening',
-        'Post a freelance project',
-        'Search for developers',
-      ],
-    },
-    {
-      title: 'Brands',
-      links: [
-        'Advertise with us',
       ],
     },
     {
@@ -55,9 +40,6 @@ export const NavLinks = [
         'About',
         'Careers',
         'Support',
-        'Media kit',
-        'Testimonials',
-        'API',
         'Terms of service',
         'Privacy policy',
         'Cookie policy',
@@ -71,26 +53,6 @@ export const NavLinks = [
         'Freelance developers for hire',
         'Tags',
         'Places',
-      ],
-    },
-    {
-      title: 'Development assets',
-      links: [
-        'Code Marketplace',
-        'GitHub Marketplace',
-        'NPM Registry',
-        'Packagephobia',
-      ],
-    },
-    {
-      title: 'Development Resources',
-      links: [
-        'Freelancing',
-        'Development Hiring',
-        'Development Portfolio',
-        'Development Education',
-        'Creative Process',
-        'Development Industry Trends',
       ],
     },
   ];
