@@ -28,6 +28,7 @@ export const uploadImage = async (imagePath: string) => {
     });
     return response.json();
   } catch (err) {
+    console.log(err);
     throw err;
   }
 };

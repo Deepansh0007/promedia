@@ -8,7 +8,7 @@ import FormField from './FormField';
 import Button from './Button';
 import CustomMenu from './CustomMenu';
 import { categoryFilters } from '@/constant';
-import {createNewProject, fetchToken } from '@/lib/actions';
+import {createNewProject, fetchToken, updateProject } from '@/lib/actions';
 import { FormState, ProjectInterface, SessionInterface } from '@/common.types';
 
 type Props = {
@@ -73,7 +73,7 @@ const ProjectForm = ({ type, session, project }: Props) => {
             }
             
             if (type === "edit") {
-               // await updateProject(form, project?.id as string, token)
+                await updateProject(form, project?.id as string, token)
 
                 router.push("/")
             }
@@ -113,7 +113,7 @@ const ProjectForm = ({ type, session, project }: Props) => {
             <FormField
                 title="Title"
                 state={form.title}
-                placeholder="Flexibble"
+                placeholder="Promedia"
                 setState={(value) => handleStateChange('title', value)}
             />
 
@@ -129,7 +129,7 @@ const ProjectForm = ({ type, session, project }: Props) => {
                 type="url"
                 title="Website URL"
                 state={form.liveSiteUrl}
-                placeholder="https://jsmastery.pro"
+                placeholder="https://promedia.vercel.app"
                 setState={(value) => handleStateChange('liveSiteUrl', value)}
             />
 
@@ -137,7 +137,7 @@ const ProjectForm = ({ type, session, project }: Props) => {
                 type="url"
                 title="GitHub URL"
                 state={form.githubUrl}
-                placeholder="https://github.com/adrianhajdin"
+                placeholder="https://github.com/Deepansh0007"
                 setState={(value) => handleStateChange('githubUrl', value)}
             />
 
