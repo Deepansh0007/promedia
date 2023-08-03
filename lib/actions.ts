@@ -72,6 +72,7 @@ export const createNewProject = async (form: ProjectForm, creatorId: string, tok
 };
 
 export const updateProject = async (form: ProjectForm, projectId: string, token: string) => {
+  client.setHeader("x-api-key", apiKey);
   function isBase64DataURL(value: string) {
     const base64Regex = /^data:image\/[a-z]+;base64,/;
     return base64Regex.test(value);
