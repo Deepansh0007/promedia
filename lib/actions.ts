@@ -101,6 +101,7 @@ export const updateProject = async (form: ProjectForm, projectId: string, token:
 };
 
 export const deleteProject = (id: string, token: string) => {
+  client.setHeader("x-api-key", apiKey);
   client.setHeader("Authorization", `Bearer ${token}`);
   return makeGraphQLRequest(deleteProjectMutation, { id });
 };
