@@ -25,7 +25,7 @@ const Categories = () => {
 						onClick={() => handleTags(filter)}
 						className={`${
 							category === filter
-								? "bg-white-white-300 font-medium"
+								? "bg-light-white-400 font-medium"
 								: "font-normal"
 						} px-4 py-3 rounded-lg capitalize whitespace-nowrap`}
 					>

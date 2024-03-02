@@ -21,7 +21,6 @@ export const updateProjectQuery = async (form, id) => {
 
 export const getProjectsQuery = async () =>{
 	const data = await sql`select p.id, p.title,p.image_url, p.description, p.live_url, p.github_url, p.created_by, u.avatar_url from projects as p, users as u where created_by = email;`;
-	console.log(data)
 	return data;
 }
 

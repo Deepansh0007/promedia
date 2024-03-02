@@ -50,17 +50,15 @@ const ProjectForm = ({ type, session, project }) => {
     }
   }
 
-  const handleFormSubmit = async e => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault()
 
     setSubmitting(true)
 
-    const { token } = await fetchToken()
-
     try {
       if (type === "create") {
         await createNewProject(form, session?.user?.email)
-
+        router.prefetch("/")
         router.push("/")
       }
 
