@@ -58,7 +58,7 @@ const ProjectForm = ({ type, session, project }) => {
     try {
       if (type === "create") {
         await createNewProject(form, session?.user?.email)
-        router.prefetch("/")
+        //router.prefetch("/")
         router.push("/")
       }
 
