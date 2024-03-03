@@ -9,7 +9,7 @@ const ProjectCard = ({ id, image, title, name, avatarUrl, userId }) => {
   const [randomViews, setRandomViews] = useState("")
 
   useEffect(() => {
-    setRandomLikes(Math.floor(Math.random() * 10000))
+    setRandomLikes(Math.floor(Math.random() * 100))
     setRandomViews(
       String((Math.floor(Math.random() * 10000) / 1000).toFixed(1) + "k")
     )
@@ -48,12 +48,12 @@ const ProjectCard = ({ id, image, title, name, avatarUrl, userId }) => {
           </div>
         </Link>
 
-        <div className="flexCenter gap-3">
-          <div className="flexCenter gap-2">
+        <div className="flexCenter gap-2">
+          <div className="flexCenter gap-1">
             <Image src="/hearth.svg" width={13} height={12} alt="heart" />
             <p className="text-sm">{randomLikes}</p>
           </div>
-          <div className="flexCenter gap-2">
+          <div className="flexCenter gap-1">
             <Image src="/eye.svg" width={12} height={9} alt="eye" />
             <p className="text-sm">{randomViews}</p>
           </div>
