@@ -36,6 +36,6 @@ export const getUserProjectsQuery = async(email) => {
 	return data
 }
 export const fetchProjectsByCategoryQuery = async(category) => {
-	const data = await sql`Select * from projects where category = ${category}`
+	const data = await sql`select p.id, p.title,p.image_url, p.description, p.live_url, p.github_url, p.created_by, u.avatar_url from projects as p, users as u where created_by = email and category = ${category}`
 	return data;
 }
