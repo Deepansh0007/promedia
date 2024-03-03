@@ -1,14 +1,13 @@
 import Categories from "@/components/Categories";
 import ProjectCard from "@/components/ProjectCard";
-import {fetchAllProjects} from "@/lib/actions";
-import { revalidatePath } from "next/cache";
+import {fetchAllProjects, fetchProjectsByCategory} from "@/lib/actions";
 
 export const dynamic = "force-dynamic";
 export const dynamicParams = true;
 
 const Home = async ({searchParams: {category}}) => {
-	console.log("rendered")
-	const data = await fetchAllProjects(category);
+
+	const data = category ? await fetchProjectsByCategory(category) : await fetchAllProjects();
 	const projectsToDisplay = data.rows || [];
 
 	if (projectsToDisplay.length === 0) {

@@ -7,7 +7,6 @@ const RelatedProjects = async ({ email, projectId }) => {
   const result = await getUserProjects(email)
   const userLink = email.split("@")[0]
   const filteredProjects = getUserProjects(email)
-  console.log(filteredProjects)
   if (!filteredProjects.rows) return null
 
   return (

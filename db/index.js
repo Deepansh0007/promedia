@@ -16,7 +16,7 @@ export const createNewProjectQuery = async (form, url, email) => {
 };
 
 export const updateProjectQuery = async (form, id) => {
-	//const data = await sql``;
+	const data = await sql`Update projects set title = ${form.title}, description = ${form.description}, image_url = ${form.image}, live_url = ${form.liveSiteUrl}, github_url = ${form.githubUrl}, category = ${form.category} where id = ${id}`;
 };
 
 export const getProjectsQuery = async () =>{
@@ -34,4 +34,8 @@ export const deleteProjectQuery = async(id) => {
 export const getUserProjectsQuery = async(email) => {
 	const data =  await sql`select * from projects where created_by = ${email}`;
 	return data
+}
+export const fetchProjectsByCategoryQuery = async(category) => {
+	const data = await sql`Select * from projects where category = ${category}`
+	return data;
 }

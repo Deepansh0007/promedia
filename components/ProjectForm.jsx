@@ -7,18 +7,17 @@ import FormField from "./FormField"
 import Button from "./Button"
 import CustomMenu from "./CustomMenu"
 import { categoryFilters } from "@/constant"
-import { updateProject, createNewProject, fetchToken } from "@/lib/actions"
+import { updateProject, createNewProject} from "@/lib/actions"
 
 const ProjectForm = ({ type, session, project }) => {
   const router = useRouter()
-
   const [submitting, setSubmitting] = useState(false)
   const [form, setForm] = useState({
     title: project?.title || "",
     description: project?.description || "",
-    image: project?.image || "",
-    liveSiteUrl: project?.liveSiteUrl || "",
-    githubUrl: project?.githubUrl || "",
+    image: project?.image_url || "",
+    liveSiteUrl: project?.live_url || "",
+    githubUrl: project?.github_url || "",
     category: project?.category || ""
   })
 
@@ -58,13 +57,11 @@ const ProjectForm = ({ type, session, project }) => {
     try {
       if (type === "create") {
         await createNewProject(form, session?.user?.email)
-        //router.prefetch("/")
         router.push("/")
       }
 
       if (type === "edit") {
-        await updateProject(form, project?.id, token)
-
+        updateProject(form, project?.id)
         router.push("/")
       }
     } catch (error) {

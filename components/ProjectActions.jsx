@@ -4,7 +4,7 @@ import Image from "next/image"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 
-import { deleteProject, fetchToken } from "@/lib/actions"
+import { deleteProject} from "@/lib/actions"
 
 const ProjectActions = ({ projectId }) => {
   const [isDeleting, setIsDeleting] = useState(false)
@@ -12,8 +12,6 @@ const ProjectActions = ({ projectId }) => {
 
   const handleDeleteProject = async () => {
     setIsDeleting(true)
-
-    const { token } = await fetchToken()
 
     try {
       deleteProject(projectId, token)
